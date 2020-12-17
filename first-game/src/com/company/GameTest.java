@@ -1,19 +1,16 @@
 package com.company;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
-import java.util.Scanner;
+
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
 
-//    @BeforeAll
-//    public static void createField() {
-//    }
 
     @Test
     public void Create__Game__When__Fieldsize__Out__Of_Range() {

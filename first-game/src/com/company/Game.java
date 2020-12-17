@@ -88,9 +88,9 @@ public class Game {
         return true;
     }
     private boolean isAllCellsSelected(char[][] field) {
-        for (int i = 0; i < field.length; i++) {
-            for(int j = 0; j < field.length; j++) {
-                if(field[i][j] == '-') return false;
+        for (char[] chars : field) {
+            for (int j = 0; j < field.length; j++) {
+                if (chars[j] == '-') return false;
             }
         }
         return true;
