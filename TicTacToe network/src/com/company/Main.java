@@ -12,8 +12,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        ServerSocket serverSocket = new ServerSocket(PORT);
-
+        ServerSocket serverSocket = new ServerSocket(4040);
         ArrayList<Player> Players = new ArrayList<>();
 
         for(int i = 0; i < 2; i++) {
@@ -29,7 +28,6 @@ public class Main {
         int fieldSize = choiceFieldSizeByPlayer(Players.get(0));
 
         Game game = new Game(playerX,PlayerO,fieldSize);
-        game.drawPlayersInfo();
         game.startGame();
 
         System.out.println("\nPlaying field size selected.");
@@ -38,7 +36,7 @@ public class Main {
         do {
 
             game.getPlayer().getClientWriter().printf("-> (%c) Player %s enter your bet: ",game.getPlayer().getPlayerSymbol(),game.getPlayerName());
-            game.getOtherPlayer().getClientWriter().printf("-> Player %s is betting, wait your move..", game.getPlayer().getName());
+            game.getOtherPlayer().getClientWriter().printf("-> (%c) Player %s is betting, wait your move..",game.getOtherPlayer().getPlayerSymbol(), game.getPlayer().getName());
 
             int[] bet = isBetCorrect(game);
             game.Turn(bet[0], bet[1]);

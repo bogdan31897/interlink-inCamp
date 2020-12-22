@@ -34,8 +34,9 @@ public class Game {
         }
     }
     private void printField() {
+        drawPlayersInfo();
         for(Player player: players) {
-            player.getClientWriter().println("\n\n");
+            player.getClientWriter().println("\r\n".repeat(2));
             for (int j = 0; j <  field.length; j++) {
                 player.getClientWriter().print("->    ");
                 for(int i = 0; i < field[j].length; i++) {
@@ -48,7 +49,7 @@ public class Game {
                     player.getClientWriter().print("\n\r");
                 }
             }
-            player.getClientWriter().println("\n\n");
+            player.getClientWriter().println("\r\n".repeat(6));
         }
     }
     public void draw(String string) {
@@ -58,9 +59,9 @@ public class Game {
     }
     public void drawPlayersInfo() {
         for(Player drawPlayer: players) {
-            drawPlayer.getClientWriter().println("\n\r-> Players:");
+            drawPlayer.getClientWriter().println("\r\n".repeat(15) + "-> Players:\r");
             for (Player player :players ) {
-                drawPlayer.getClientWriter().printf("->  (%c) %s\n\r", player.getPlayerSymbol(), player.getName());
+                drawPlayer.getClientWriter().printf("->  (%c) %s\r\n", player.getPlayerSymbol(), player.getName());
             }
         }
     }
